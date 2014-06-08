@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	
+    <TextView 
+        android:id="@+id/titulo"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold"
+    	android:textSize="70px"
+    	android:layout_marginLeft="100px"
+    	android:textColor="#E17B1B"
+    	android:text="SERPIS FINANCES" 
+    	android:layout_alignParentTop="true"
+    	/>
+    
+    <TextView
+        android:id="@+id/random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="80px"
+        android:layout_marginLeft="260px"
+        android:textSize="50px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        >
+    </TextView>
+    
+    
+    <ImageButton
+            android:id="@+id/imagen" 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/random"
+            android:background="@android:color/transparent"
+            android:src="@drawable/grafico10" />
+    
+    
+    <LinearLayout 
+    	android:id="@+id/shareLILayout"
+        android:layout_alignParentBottom="true"
+        android:background="#E8A053"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal" >
+      
+  <Button android:id="@+id/botoncarteras" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_weight="1" android:layout_margin="5dp" android:text="Carteras" />
+
+  <Button android:id="@+id/botonnoticias" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_weight="1" android:layout_margin="5dp" android:text="Noticias" />
+
+  <Button android:id="@+id/botongraficos" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_weight="1" android:layout_margin="5dp" android:text="Gráficas" />
+
+ 
+
+</LinearLayout> 
+    
+</RelativeLayout>
