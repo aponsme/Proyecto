@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+	<LinearLayout 
+    	android:id="@+id/layout" 
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal" >	
+    <include
+        android:id="@+id/imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/logo_empresa" />
+    <TextView 
+        android:id="@+id/titulo"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold"
+    	android:textSize="50px"
+    	android:textColor="#FFFFFF"
+    	android:text="Añadir empresas" 
+    	/>
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/text"
+        android:layout_below="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una empresa:"
+         />
+    
+	<Spinner android:id="@+id/spinner"
+	android:layout_below="@+id/text"  
+	android:layout_marginTop="10px"  
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" />
+	
+	
+	<TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce el precio al que compraste:"
+        android:layout_below="@+id/spinner"
+         />
+	<EditText
+        android:id="@+id/edit"
+        android:layout_marginTop="10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text2"
+        />
+	<TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introduce la cantidad que compraste:"
+        android:layout_below="@+id/edit"
+         />
+	<EditText
+        android:id="@+id/edit3"
+        android:layout_marginTop="10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text3"
+        />
+ 	
+ 	
+ 	<LinearLayout 
+    	android:id="@+id/layoutbottom" 
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal" >	
+    <Button 
+      android:id="@+id/anadir"
+	android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:drawableTop="@drawable/check" 
+    android:textSize="25px"
+    android:layout_marginRight="210dp"
+    android:text="Añadir"/>
+    <Button 
+    android:id="@+id/ir"
+	android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:drawableTop="@drawable/ver" 
+    android:textSize="25px"
+    android:layout_marginRight="15dp"
+    android:text="Ver listado"/>      
+    
+    </LinearLayout>
+</RelativeLayout>

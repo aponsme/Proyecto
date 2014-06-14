@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <LinearLayout 
+    	android:id="@+id/layout" 
+        android:layout_alignParentTop="true"
+        android:background="@drawable/shape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="horizontal" >	
+    <include
+        android:id="@+id/imagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_logo" />
+    <TextView 
+        android:id="@+id/titulo"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold"
+    	android:textSize="50px"
+    	android:textColor="#FFFFFF"
+    	android:text="Añadir carteras" 
+    	/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/texto"
+        android:layout_marginTop="60px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout"
+        android:textSize="30px"
+        android:text="Nombre de la cartera: "
+        >
+    </TextView>
+    <EditText
+        android:id="@+id/edit" 
+        android:layout_below="@+id/layout"
+        android:layout_alignBaseline="@+id/texto"
+        android:layout_marginTop="10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/texto"
+        /> 
+        
+    
+    <LinearLayout 
+    	android:id="@+id/layout0" 
+        android:background="#E8A053"
+        android:layout_below="@+id/texto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="left"
+        android:orientation="horizontal" >
+    
+    <Button 
+      android:id="@+id/anadir" 
+      android:layout_height="wrap_content" 
+      android:layout_width="wrap_content" 
+      android:drawableLeft="@drawable/plus" />
+    <Button
+      android:id="@+id/buttonCancelar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/papelera"
+         /> 
+         
+    </LinearLayout>
+    
+    
+    	<LinearLayout 
+    	android:id="@+id/layout1"
+        android:layout_below="@+id/layout0"
+        android:layout_marginTop="10px"
+        android:background="#FFFFFF"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+	    <ListView
+	    android:id="@android:id/list"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@color/background"
+	    android:cacheColorHint="@android:color/transparent"
+	    android:divider="@android:color/transparent"
+	    android:dividerHeight="8dp"
+	    android:scrollbarStyle="outsideOverlay"
+	    android:paddingBottom="8dp"
+	    android:paddingLeft="5dp"
+	    android:paddingRight="5dp"
+	    android:paddingTop="15dp" >
+	        
+	    </ListView>
+		 
+
+</LinearLayout>
+</RelativeLayout>
