@@ -60,6 +60,7 @@ public class Valores {
 	public void setChecked(boolean checked) {
 		this.checked = checked;
 	}
+
 	
 //	/*-------------------------------------*/
 //	public float calcGanancia(){

@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -29,7 +30,7 @@ public class Resultados extends ListActivity {
 	BaseDatos base;
 	SQLiteDatabase bd;
 	SQLiteDatabase bd2;
-	int porcentaje;
+	float porcentaje;
 	Bundle bundle;
 	String nombre;
 	List<Valores> vals;
@@ -104,7 +105,7 @@ public class Resultados extends ListActivity {
 		System.out.println("ENTRA EN SELECCIONA OPERACIONES");
 		bd = base.getReadableDatabase();
 		//OBTENEMOS DE TABLA OPERACIONES LOS SIGUIENTES CAMPOS
-		String[] columns = { "fk_empresa", "precio_compra"};
+		String[] columns = { "fk_empresa", "precio_compra", "cantidad"};
 		
 		//Cogemos todas las empresas de la cartera seleccionada
 		Cursor fila = bd.query("operaciones", columns, "fk_cartera=?",new String[] { id }, null, null, null);
@@ -115,9 +116,11 @@ public class Resultados extends ListActivity {
 			val = new Valores();
 			val.setEmpresa(fila.getString(0));
 			val.setCompra(fila.getString(1));
+			String cantidad=fila.getString(2);
+			int cantidadInt=Integer.parseInt(cantidad);
 			//val.setPorcentaje(fila.getString(3) + "%");
 			//val.setGanancia(fila.getString(4) + "€");
-			vals.add(val);
+			
 			
 			System.out.println("ASIGNA VALORES A VAL");
 			
@@ -134,10 +137,49 @@ public class Resultados extends ListActivity {
 				float bolsa=fila2.getFloat(0);
 				System.out.println(bolsa);
 				Log.e("TRAZA CRISTIAN", String.valueOf(fila2.getFloat(0)));
+				//val.getCompra() lo paso a float
+				String bolsaaString=String.valueOf(fila2.getFloat(0));
+				porcentaje=(bolsa/Float.parseFloat(val.getCompra())*100)-100;
+				String porcentajeaString=String.valueOf(porcentaje);
+				float ganancia=(bolsa*cantidadInt)-(Float.parseFloat(val.getCompra())*cantidadInt);
+				String gananciaaString=String.valueOf(ganancia);;
+				//Muestra en la lista la lectura
+				val.setActual(bolsaaString);
+				val.setPorcentaje(porcentajeaString+ "%");
+				val.setGanancia(gananciaaString);
+				vals.add(val);
+//				ContentValues valores = new ContentValues();
+//				valores.put("nombre","usunuevo");
+//				valores.put("nombre","usunuevo");
+//				valores.put("nombre","usunuevo");
+//				valores.put("nombre","usunuevo");
+//				 
+//				//Actualizamos el registro en la base de datos
+//				bd.update("operaciones", valores, "fk_empresa=val.setEmpresa(fila.getString(0)", null);
+				
+				
 			}
 			bd2.close();
 		}
 		bd.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	
