@@ -135,14 +135,15 @@ public class Resultados extends ListActivity {
 			//Leo los registros de la tabla empresas
 			while (fila2.moveToNext()) {
 				float bolsa=fila2.getFloat(0);
-				System.out.println(bolsa);
-				Log.e("TRAZA CRISTIAN", String.valueOf(fila2.getFloat(0)));
+				
 				//val.getCompra() lo paso a float
 				String bolsaaString=String.valueOf(fila2.getFloat(0));
 				porcentaje=(bolsa/Float.parseFloat(val.getCompra())*100)-100;
-				String porcentajeaString=String.valueOf(porcentaje);
+				String redondeoeurosporcentaje=String.format("%.2f", porcentaje);
+				String porcentajeaString=String.valueOf(redondeoeurosporcentaje);
 				float ganancia=(bolsa*cantidadInt)-(Float.parseFloat(val.getCompra())*cantidadInt);
-				String gananciaaString=String.valueOf(ganancia);;
+				String redondeoeurosganancia=String.format("%.2f", ganancia);
+				String gananciaaString=String.valueOf(redondeoeurosganancia);;
 				//Muestra en la lista la lectura
 				val.setActual(bolsaaString);
 				val.setPorcentaje(porcentajeaString+ "%");
