@@ -1,0 +1,41 @@
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:id="@+id/layout" 
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="vertical" >	
+   
+    <TextView 
+        android:id="@+id/tv"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold"
+    	android:textSize="50px"
+    	android:textColor="#FFFFFF"
+    	android:text="Añadir empresas" 
+    	/>
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+ 
+     <TextView 
+        android:id="@+id/tv2"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textStyle="bold"
+    	android:textSize="50px"
+    	android:textColor="#FFFFFF"
+    	android:text="Añadir empresas" 
+    	/>
+    
+    <Button android:id="@+id/boton1" android:textSize="25px" android:layout_marginRight="15dp" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:background="@android:color/transparent" android:text="Noticias" />
+
+  <Button android:id="@+id/boton2" android:textSize="25px" android:layout_marginRight="15dp" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:background="@android:color/transparent" android:text="Gráficas"  />
+  
+   <Button android:id="@+id/boton3" android:textSize="25px" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:background="@android:color/transparent" android:text="Maps"  />
+    
+    </LinearLayout>
